@@ -100,7 +100,7 @@ const ChatbotOptions = () => {
                 className="cursor-move text-muted-foreground" 
               />
               <Input
-                placeholder={`Option ${index + 1}`}
+                placeholder="Type your option here"
                 value={option.text}
                 onChange={(e) => handleOptionChange(option.id, e.target.value)}
                 className="flex-1"
