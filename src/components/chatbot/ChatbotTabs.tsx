@@ -4,6 +4,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import ChatbotBasicDetails from './ChatbotBasicDetails';
 import ChatbotTeamMembers from './ChatbotTeamMembers';
 import ChatbotCustomisation from './ChatbotCustomisation';
+import ChatbotOptions from './ChatbotOptions';
 
 interface ChatbotTabsProps {
   chatbotName: string;
@@ -37,10 +38,10 @@ const ChatbotTabs: React.FC<ChatbotTabsProps> = ({ chatbotName }) => {
             Customisation
           </TabsTrigger>
           <TabsTrigger 
-            value="services" 
-            className={`tab-button ${activeTab === 'services' ? 'text-purple-700' : ''}`}
+            value="options" 
+            className={`tab-button ${activeTab === 'options' ? 'text-purple-700' : ''}`}
           >
-            Services
+            Options
           </TabsTrigger>
           <TabsTrigger 
             value="ai-prompting" 
@@ -64,11 +65,8 @@ const ChatbotTabs: React.FC<ChatbotTabsProps> = ({ chatbotName }) => {
           <ChatbotCustomisation />
         </TabsContent>
         
-        <TabsContent value="services">
-          <div className="p-6 chatbot-card">
-            <h3 className="text-lg font-medium mb-4">Services Configuration</h3>
-            <p className="text-muted-foreground">Configure the services your chatbot can access.</p>
-          </div>
+        <TabsContent value="options">
+          <ChatbotOptions />
         </TabsContent>
         
         <TabsContent value="ai-prompting">
