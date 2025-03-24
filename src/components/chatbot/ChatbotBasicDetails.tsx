@@ -62,6 +62,7 @@ const formSchema = z.object({
   findPractice: z.string().optional(),
   hasParking: z.enum(["yes", "no"]),
   usp: z.string().optional(),
+  privacyPolicy: z.string().url({ message: "Invalid URL" }).optional(),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -410,6 +411,25 @@ const ChatbotBasicDetails: React.FC = () => {
                     <Textarea 
                       placeholder="Enter practice unique selling points"
                       className="min-h-[100px]"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            
+            <FormField
+              control={form.control}
+              name="privacyPolicy"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Privacy Policy</FormLabel>
+                  <FormControl>
+                    <Input 
+                      placeholder="Enter Privacy Policy URL" 
+                      className="input-with-animation"
+                      type="url"
                       {...field}
                     />
                   </FormControl>
