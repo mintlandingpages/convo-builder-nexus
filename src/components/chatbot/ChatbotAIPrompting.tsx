@@ -71,13 +71,13 @@ const ChatbotAIPrompting = () => {
       {/* Main prompt textarea */}
       <div className="mb-8">
         <label htmlFor="main-prompt" className="block text-sm font-medium mb-2">
-          Main Prompt
+          AI Training Prompts
         </label>
         <Textarea 
           id="main-prompt"
           value={mainPrompt}
           onChange={(e) => setMainPrompt(e.target.value)}
-          placeholder="Enter your main AI prompt here..."
+          placeholder="Enter your AI Training Prompt here..."
           className="min-h-[200px] text-base"
         />
       </div>
