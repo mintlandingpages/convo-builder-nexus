@@ -5,6 +5,7 @@ import ChatbotBasicDetails from './ChatbotBasicDetails';
 import ChatbotTeamMembers from './ChatbotTeamMembers';
 import ChatbotCustomisation from './ChatbotCustomisation';
 import ChatbotOptions from './ChatbotOptions';
+import ChatbotAIPrompting from './ChatbotAIPrompting';
 
 interface ChatbotTabsProps {
   chatbotName: string;
@@ -70,10 +71,7 @@ const ChatbotTabs: React.FC<ChatbotTabsProps> = ({ chatbotName }) => {
         </TabsContent>
         
         <TabsContent value="ai-prompting">
-          <div className="p-6 chatbot-card">
-            <h3 className="text-lg font-medium mb-4">AI Prompting</h3>
-            <p className="text-muted-foreground">Configure AI prompts for your chatbot.</p>
-          </div>
+          <ChatbotAIPrompting />
         </TabsContent>
       </Tabs>
     </div>
