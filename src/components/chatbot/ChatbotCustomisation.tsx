@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Textarea } from "@/components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -7,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Image, Clock } from "lucide-react";
+import { Image, Clock, LayoutList, LayoutGrid } from "lucide-react";
 
 const ChatbotCustomisation = () => {
   const [startMessage1, setStartMessage1] = useState('');
@@ -17,6 +16,7 @@ const ChatbotCustomisation = () => {
   const [primaryColor, setPrimaryColor] = useState('#9b87f5');
   const [secondaryColor, setSecondaryColor] = useState('#e5deff');
   const [chatTimeDelay, setChatTimeDelay] = useState('standard');
+  const [optionsLayout, setOptionsLayout] = useState('list');
 
   const handleAvatarUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -200,6 +200,35 @@ const ChatbotCustomisation = () => {
                   <Label htmlFor="two-seconds" className="flex items-center gap-2">
                     <Clock size={16} className="text-muted-foreground" />
                     2 Seconds
+                  </Label>
+                </div>
+              </RadioGroup>
+            </CardContent>
+          </Card>
+        </div>
+        
+        {/* Options Layout Section - New section */}
+        <div className="space-y-4">
+          <h4 className="text-md font-medium">Options Layout</h4>
+          <Card>
+            <CardContent className="pt-6">
+              <RadioGroup 
+                value={optionsLayout} 
+                onValueChange={setOptionsLayout}
+              >
+                <div className="flex items-center space-x-2 mb-4">
+                  <RadioGroupItem value="list" id="list-layout" />
+                  <Label htmlFor="list-layout" className="flex items-center gap-2">
+                    <LayoutList size={16} className="text-muted-foreground" />
+                    List
+                  </Label>
+                </div>
+                
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="grid" id="grid-layout" />
+                  <Label htmlFor="grid-layout" className="flex items-center gap-2">
+                    <LayoutGrid size={16} className="text-muted-foreground" />
+                    Grid
                   </Label>
                 </div>
               </RadioGroup>
