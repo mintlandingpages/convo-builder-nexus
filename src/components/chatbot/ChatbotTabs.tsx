@@ -18,25 +18,25 @@ const ChatbotTabs: React.FC<ChatbotTabsProps> = ({ chatbotName }) => {
         <TabsList className="grid w-full grid-cols-4 mb-8">
           <TabsTrigger 
             value="basic-details" 
-            className={`tab-button ${activeTab === 'basic-details' ? 'text-primary' : ''}`}
+            className={`tab-button ${activeTab === 'basic-details' ? 'text-purple-700' : ''}`}
           >
             Basic Details
           </TabsTrigger>
           <TabsTrigger 
             value="customisation" 
-            className={`tab-button ${activeTab === 'customisation' ? 'text-primary' : ''}`}
+            className={`tab-button ${activeTab === 'customisation' ? 'text-purple-700' : ''}`}
           >
             Customisation
           </TabsTrigger>
           <TabsTrigger 
             value="services" 
-            className={`tab-button ${activeTab === 'services' ? 'text-primary' : ''}`}
+            className={`tab-button ${activeTab === 'services' ? 'text-purple-700' : ''}`}
           >
             Services
           </TabsTrigger>
           <TabsTrigger 
             value="ai-prompting" 
-            className={`tab-button ${activeTab === 'ai-prompting' ? 'text-primary' : ''}`}
+            className={`tab-button ${activeTab === 'ai-prompting' ? 'text-purple-700' : ''}`}
           >
             AI Prompting
           </TabsTrigger>

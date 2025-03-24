@@ -17,14 +17,14 @@ const ChatbotHeader: React.FC<ChatbotHeaderProps> = ({
   return (
     <div className="flex items-center justify-between w-full mb-8 animate-fade-in">
       <div className="flex items-center gap-2">
-        <MessageSquare className="w-5 h-5" />
-        <h1 className="text-xl font-medium">Chatbot Manager</h1>
+        <MessageSquare className="w-5 h-5 text-purple-600" />
+        <h1 className="text-xl font-medium text-purple-700">Chatbot Manager</h1>
       </div>
       <div className="flex items-center gap-3">
         <Button 
           onClick={onSave}
           variant="outline" 
-          className="button-premium bg-blue-50 text-primary hover:bg-blue-100 border-blue-100"
+          className="button-premium bg-purple-50 text-purple-700 hover:bg-purple-100 border-purple-100"
         >
           <Save className="w-4 h-4 mr-1" />
           SAVE
@@ -32,7 +32,7 @@ const ChatbotHeader: React.FC<ChatbotHeaderProps> = ({
         <Button 
           onClick={onPublish}
           variant="default" 
-          className="button-premium bg-black hover:bg-black/90 text-white"
+          className="button-premium bg-purple-600 hover:bg-purple-700 text-white"
         >
           <Upload className="w-4 h-4 mr-1" />
           PUBLISH
