@@ -15,7 +15,7 @@ const ChatbotTabs: React.FC<ChatbotTabsProps> = ({ chatbotName }) => {
       <h2 className="text-2xl font-medium mb-6 animate-fade-in">{chatbotName || 'Chatbot Name'}</h2>
       
       <Tabs defaultValue="basic-details" className="w-full" onValueChange={setActiveTab}>
-        <TabsList className="grid w-full grid-cols-5 mb-8">
+        <TabsList className="grid w-full grid-cols-4 mb-8">
           <TabsTrigger 
             value="basic-details" 
             className={`tab-button ${activeTab === 'basic-details' ? 'text-primary' : ''}`}
@@ -23,22 +23,16 @@ const ChatbotTabs: React.FC<ChatbotTabsProps> = ({ chatbotName }) => {
             Basic Details
           </TabsTrigger>
           <TabsTrigger 
-            value="start" 
-            className={`tab-button ${activeTab === 'start' ? 'text-primary' : ''}`}
+            value="customisation" 
+            className={`tab-button ${activeTab === 'customisation' ? 'text-primary' : ''}`}
           >
-            Start
+            Customisation
           </TabsTrigger>
           <TabsTrigger 
             value="services" 
             className={`tab-button ${activeTab === 'services' ? 'text-primary' : ''}`}
           >
             Services
-          </TabsTrigger>
-          <TabsTrigger 
-            value="design" 
-            className={`tab-button ${activeTab === 'design' ? 'text-primary' : ''}`}
-          >
-            Design
           </TabsTrigger>
           <TabsTrigger 
             value="ai-prompting" 
@@ -52,10 +46,10 @@ const ChatbotTabs: React.FC<ChatbotTabsProps> = ({ chatbotName }) => {
           <ChatbotBasicDetails />
         </TabsContent>
         
-        <TabsContent value="start">
+        <TabsContent value="customisation">
           <div className="p-6 chatbot-card">
-            <h3 className="text-lg font-medium mb-4">Start Configuration</h3>
-            <p className="text-muted-foreground">Configure how your chatbot starts conversations.</p>
+            <h3 className="text-lg font-medium mb-4">Customisation</h3>
+            <p className="text-muted-foreground">Customize the appearance and behavior of your chatbot.</p>
           </div>
         </TabsContent>
         
@@ -63,13 +57,6 @@ const ChatbotTabs: React.FC<ChatbotTabsProps> = ({ chatbotName }) => {
           <div className="p-6 chatbot-card">
             <h3 className="text-lg font-medium mb-4">Services Configuration</h3>
             <p className="text-muted-foreground">Configure the services your chatbot can access.</p>
-          </div>
-        </TabsContent>
-        
-        <TabsContent value="design">
-          <div className="p-6 chatbot-card">
-            <h3 className="text-lg font-medium mb-4">Design Configuration</h3>
-            <p className="text-muted-foreground">Customize how your chatbot looks.</p>
           </div>
         </TabsContent>
         
