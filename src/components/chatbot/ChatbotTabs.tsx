@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import ChatbotBasicDetails from './ChatbotBasicDetails';
 import ChatbotTeamMembers from './ChatbotTeamMembers';
+import ChatbotCustomisation from './ChatbotCustomisation';
 
 interface ChatbotTabsProps {
   chatbotName: string;
@@ -60,10 +61,7 @@ const ChatbotTabs: React.FC<ChatbotTabsProps> = ({ chatbotName }) => {
         </TabsContent>
         
         <TabsContent value="customisation">
-          <div className="p-6 chatbot-card">
-            <h3 className="text-lg font-medium mb-4">Customisation</h3>
-            <p className="text-muted-foreground">Customize the appearance and behavior of your chatbot.</p>
-          </div>
+          <ChatbotCustomisation />
         </TabsContent>
         
         <TabsContent value="services">
