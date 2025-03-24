@@ -15,12 +15,18 @@ const ChatbotTabs: React.FC<ChatbotTabsProps> = ({ chatbotName }) => {
       <h2 className="text-2xl font-medium mb-6 animate-fade-in">{chatbotName || 'Chatbot Name'}</h2>
       
       <Tabs defaultValue="basic-details" className="w-full" onValueChange={setActiveTab}>
-        <TabsList className="grid w-full grid-cols-4 mb-8">
+        <TabsList className="grid w-full grid-cols-5 mb-8">
           <TabsTrigger 
             value="basic-details" 
             className={`tab-button ${activeTab === 'basic-details' ? 'text-purple-700' : ''}`}
           >
-            Basic Details
+            Practice Details
+          </TabsTrigger>
+          <TabsTrigger 
+            value="team-dentists" 
+            className={`tab-button ${activeTab === 'team-dentists' ? 'text-purple-700' : ''}`}
+          >
+            Team (Dentists)
           </TabsTrigger>
           <TabsTrigger 
             value="customisation" 
@@ -44,6 +50,13 @@ const ChatbotTabs: React.FC<ChatbotTabsProps> = ({ chatbotName }) => {
         
         <TabsContent value="basic-details" className="animate-slide-in">
           <ChatbotBasicDetails />
+        </TabsContent>
+        
+        <TabsContent value="team-dentists">
+          <div className="p-6 chatbot-card">
+            <h3 className="text-lg font-medium mb-4">Team (Dentists)</h3>
+            <p className="text-muted-foreground">Manage your dental practice team members.</p>
+          </div>
         </TabsContent>
         
         <TabsContent value="customisation">
