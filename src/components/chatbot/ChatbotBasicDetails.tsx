@@ -46,6 +46,7 @@ const timeOptions = createTimeOptions();
 
 const formSchema = z.object({
   practiceName: z.string().min(1, { message: "Practice name is required" }),
+  tcoName: z.string().min(1, { message: "TCO name is required" }),
   streetAddress: z.string().min(1, { message: "Street address is required" }),
   phoneNumber: z.string().min(1, { message: "Phone number is required" }),
   whatsappNumber: z.string().optional(),
@@ -78,6 +79,7 @@ const ChatbotBasicDetails: React.FC = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       practiceName: "",
+      tcoName: "",
       streetAddress: "",
       phoneNumber: "",
       whatsappNumber: "",
@@ -109,6 +111,24 @@ const ChatbotBasicDetails: React.FC = () => {
                   <FormControl>
                     <Input 
                       placeholder="Enter practice name" 
+                      className="input-with-animation"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            
+            <FormField
+              control={form.control}
+              name="tcoName"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>TCO Name</FormLabel>
+                  <FormControl>
+                    <Input 
+                      placeholder="Enter TCO name" 
                       className="input-with-animation"
                       {...field}
                     />
