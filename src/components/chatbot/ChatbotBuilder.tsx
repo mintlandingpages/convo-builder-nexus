@@ -25,12 +25,19 @@ const ChatbotBuilder: React.FC = () => {
     });
   };
   
+  const handlePreview = () => {
+    toast.success('Opening chatbot preview', {
+      description: 'Previewing your chatbot configuration'
+    });
+  };
+  
   return (
     <div className="max-w-5xl mx-auto py-8 px-6">
       <ChatbotHeader 
         onSave={handleSave}
         onPublish={handlePublish}
         onEmbed={handleEmbed}
+        onPreview={handlePreview}
       />
       <ChatbotTabs 
         chatbotName={chatbotName}

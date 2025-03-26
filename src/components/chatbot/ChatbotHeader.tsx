@@ -1,18 +1,20 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { MessageSquare, Save, Upload, Code } from 'lucide-react';
+import { MessageSquare, Save, Upload, Code, Eye } from 'lucide-react';
 
 interface ChatbotHeaderProps {
   onSave: () => void;
   onPublish: () => void;
   onEmbed: () => void;
+  onPreview: () => void;
 }
 
 const ChatbotHeader: React.FC<ChatbotHeaderProps> = ({
   onSave,
   onPublish,
-  onEmbed
+  onEmbed,
+  onPreview
 }) => {
   return (
     <div className="flex items-center justify-between w-full mb-8 animate-fade-in">
@@ -21,6 +23,14 @@ const ChatbotHeader: React.FC<ChatbotHeaderProps> = ({
         <h1 className="text-xl font-medium text-purple-700">Chatbot Manager</h1>
       </div>
       <div className="flex items-center gap-3">
+        <Button 
+          onClick={onPreview}
+          variant="outline" 
+          className="button-premium bg-blue-50 text-blue-700 hover:bg-blue-100 border-blue-100"
+        >
+          <Eye className="w-4 h-4 mr-1" />
+          PREVIEW
+        </Button>
         <Button 
           onClick={onSave}
           variant="outline" 
